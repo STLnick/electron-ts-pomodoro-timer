@@ -1,0 +1,22 @@
+@import 'colors';
+
+// View specific files
+@import 'greeting';
+
+// Component specific files
+@import 'navbar';
+
+// Reusable classes
+.button {
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.cta {
+  background-color: $primary;
+  color: #616161;
+  text-transform: uppercase;
+}
