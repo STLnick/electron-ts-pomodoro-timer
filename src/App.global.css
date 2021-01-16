@@ -10,15 +10,33 @@ body {
   height: 100vh;
   background: linear-gradient(
     200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
+    #13e664 -29.09%,
+    #1ac6f1 51.77%,
+    #4910e6 129.35%
   );
   font-family: 'Noto Sans JP', sans-serif;
   overflow-y: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+body.active {
+  background: linear-gradient(
+    200.96deg,
+    #32baf0 -29.09%,
+    #2e5cf1 51.77%,
+    #6435e6 129.35%
+  );
+}
+
+body.break {
+  background: linear-gradient(
+    200.96deg,
+    #4fe7c6 -29.09%,
+    #39db69 51.77%,
+    #2ea133 129.35%
+  );
 }
 
 h2 {
