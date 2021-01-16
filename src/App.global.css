@@ -21,6 +21,7 @@ body {
   align-items: center;
 }
 
+/* * Classes applied by the Timer to change background colors when active/inactive * */
 body.active {
   background: linear-gradient(
     200.96deg,
@@ -38,6 +39,7 @@ body.break {
     #2ea133 129.35%
   );
 }
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 h2 {
   margin: 0;

@@ -1,28 +1,33 @@
-import React, { FC, SyntheticEvent, useState } from 'react';
+import React, {
+  FC,
+  KeyboardEvent,
+  MouseEvent,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import Menu, { MenuProps } from '@material-ui/core/Menu';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import HomeIcon from '@material-ui/icons/Home';
 import TimerIcon from '@material-ui/icons/Timer';
-import timerLogo from '../../assets/timer.svg';
 import Paper from '@material-ui/core/Paper';
+import timerLogo from '../../assets/timer.svg';
 
 const NavBar: FC = () => {
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLButtonElement>(null);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleClose = (event: React.MouseEvent<EventTarget>) => {
+  const handleClose = (event: MouseEvent<EventTarget>) => {
     if (
       anchorRef.current &&
       anchorRef.current.contains(event.target as HTMLElement)
@@ -33,7 +38,7 @@ const NavBar: FC = () => {
     setOpen(false);
   };
 
-  function handleListKeyDown(event: React.KeyboardEvent) {
+  function handleListKeyDown(event: KeyboardEvent) {
     if (event.key === 'Tab') {
       event.preventDefault();
       setOpen(false);
@@ -41,8 +46,8 @@ const NavBar: FC = () => {
   }
 
   // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
+  const prevOpen = useRef(open);
+  useEffect(() => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current!.focus();
     }
@@ -74,6 +79,7 @@ const NavBar: FC = () => {
         >
           {({ TransitionProps, placement }) => (
             <Grow
+              // eslint-disable jsx-props-no-spreading
               {...TransitionProps}
               style={{
                 transformOrigin:
@@ -87,9 +93,33 @@ const NavBar: FC = () => {
                     id="menu-list-grow"
                     onKeyDown={handleListKeyDown}
                   >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <Link
+                        className="nav-link flex flex--align-center flex--justify-between"
+                        to="/"
+                      >
+                        <HomeIcon />
+                        Home
+                      </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <Link
+                        className="nav-link flex flex--align-center flex--justify-between"
+                        to="/timer"
+                      >
+                        <TimerIcon />
+                        Timer
+                      </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <Link
+                        className="nav-link flex flex--align-center flex--justify-between"
+                        to="/"
+                      >
+                        <AssignmentIcon />
+                        Tasks
+                      </Link>
+                    </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
