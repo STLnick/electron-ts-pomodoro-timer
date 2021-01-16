@@ -3,20 +3,17 @@
 /* * Flex Classes * */
 .flex {
   display: flex;
-}
 
-.flex--column {
-  flex-direction: column;
-}
-
-.flex--justify-center {
-  justify-content: center;
-}
-
-.flex--justify-between {
-  justify-content: space-between;
-}
-
-.flex--align-center {
-  align-items: center;
+  &--column {
+    flex-direction: column;
+  }
+  &--align-center {
+    align-items: center;
+  }
+  &--justify-center {
+    justify-content: center;
+  }
+  &--justify-between {
+    justify-content: space-between;
+  }
 }
