@@ -32,7 +32,7 @@ const TimerDashboard = () => {
     <div className="timer-dashboard">
       <TimerDisplay time={time} />
       <button type="button" onClick={handleTimerToggle}>
-        Start
+        {timerIsRunning ? 'Stop' : 'Start'}
       </button>
     </div>
   );
