@@ -9,7 +9,7 @@ export default function App() {
     <Router>
       <NavBar />
       <Switch>
-        <Route exact path="/" component={Greeting} />
+        <Route exact path="/" render={() => <Greeting name="Nick" />} />
         <Route exact path="/timer" component={TimerDashboard} />
       </Switch>
     </Router>
