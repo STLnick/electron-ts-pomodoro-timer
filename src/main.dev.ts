@@ -14,6 +14,7 @@ import path from 'path';
 import { app, BrowserWindow, shell } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
+import express from 'express';
 import MenuBuilder from './menu';
 
 export default class AppUpdater {
@@ -23,6 +24,14 @@ export default class AppUpdater {
     autoUpdater.checkForUpdatesAndNotify();
   }
 }
+
+// Example starter code for Express backend routing from ERB github
+const expressApp = express();
+expressApp.get('/', (_, res) => res.send('Hello World!'));
+expressApp.listen(3000, () => {
+  console.log('Example app listening on port 3000!');
+});
+/* - - - - - - - - - - - - - */
 
 let mainWindow: BrowserWindow | null = null;
 
