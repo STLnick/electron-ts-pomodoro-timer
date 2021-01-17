@@ -26,5 +26,5 @@
     "*.{css,sass,scss}.d.ts": true
   },
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
-  "cSpell.words": ["stlnick"]
+  "cSpell.words": ["pomodoro", "stlnick"]
 }
