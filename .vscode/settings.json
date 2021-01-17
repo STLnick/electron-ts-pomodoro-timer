@@ -25,5 +25,6 @@
     "yarn.lock": true,
     "*.{css,sass,scss}.d.ts": true
   },
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "cSpell.words": ["stlnick"]
 }
