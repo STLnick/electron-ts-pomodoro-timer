@@ -2,7 +2,9 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 body {
   position: relative;
@@ -14,7 +16,7 @@ body {
     #1ac6f1 51.77%,
     #4910e6 129.35%
   );
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Yusei Magic', sans-serif;
   overflow-y: hidden;
   display: flex;
   justify-content: center;
@@ -40,6 +42,11 @@ body.break {
   );
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+h1 {
+  font-size: 3em;
+  font-weight: 300;
+}
 
 h2 {
   margin: 0;
@@ -84,11 +91,4 @@ a:hover {
   opacity: 1;
   text-decoration: none;
   cursor: pointer;
-}
-
-.Hello {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
 }
