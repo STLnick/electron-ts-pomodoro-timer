@@ -24,6 +24,16 @@ const TimerDashboard = () => {
     else stopTimer();
   }, [startTimer, stopTimer, timerIsRunning]);
 
+  const handleRequest = async (): Promise<string> => {
+    const res = await fetch('http://localhost:3000', {});
+    return res.json();
+  };
+
+  const logResponse = async (): Promise<void> => {
+    const text = await handleRequest();
+    console.log(text);
+  };
+
   const handleTimerToggle = (): void => {
     setTimerIsRunning((prevState) => !prevState);
   };
@@ -33,6 +43,9 @@ const TimerDashboard = () => {
       <TimerDisplay time={time} />
       <button type="button" onClick={handleTimerToggle}>
         {timerIsRunning ? 'Stop' : 'Start'}
+      </button>
+      <button type="button" onClick={handleRequest}>
+        REQUEST
       </button>
     </div>
   );
